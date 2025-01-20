@@ -1,4 +1,4 @@
-const todoList = [];
+let todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 function renderTodoList() {
   let todoListHTML = '';
@@ -7,21 +7,15 @@ function renderTodoList() {
     const todoObject = todoList[i]; 
     const { name, dueDate, isFinished } = todoObject; 
 
-    
     const html = `
       <div class="${isFinished ? 'finished-task' : ''}">
-        <!-- Checkbox to mark the task as finished -->
         <input type="checkbox" 
                onclick="toggleFinished(${i});" 
                ${isFinished ? 'checked' : ''}>
         ${name}
       </div>
       <div>${dueDate}</div>
-      <!-- Button to delete the todo item -->
-      <button onclick="
-        todoList.splice(${i}, 1); 
-        renderTodoList(); 
-      " class="delete-todo-button">Delete</button>      
+      <button onclick="deleteTodo(${i});" class="delete-todo-button">Delete</button>      
     `;
 
     todoListHTML += html;
@@ -32,16 +26,20 @@ function renderTodoList() {
 
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');
-  const name = inputElement.value; 
+  const name = inputElement.value;
 
   const dateInputElement = document.querySelector('.js-due-date-input');
   const dueDate = dateInputElement.value; 
 
+  if (!name || !dueDate) return;
+
   todoList.push({
     name: name, 
     dueDate: dueDate, 
-    isFinished: false
+    isFinished: false 
   });
+
+  saveTodoList();
 
   inputElement.value = '';
 
@@ -50,5 +48,18 @@ function addTodo() {
 
 function toggleFinished(index) {
   todoList[index].isFinished = !todoList[index].isFinished; 
+  saveTodoList(); 
   renderTodoList(); 
 }
+
+function deleteTodo(index) {
+  todoList.splice(index, 1); 
+  saveTodoList(); 
+  renderTodoList(); 
+}
+
+function saveTodoList() {
+  localStorage.setItem('todoList', JSON.stringify(todoList)); 
+}
+
+renderTodoList();
