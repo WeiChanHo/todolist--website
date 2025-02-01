@@ -63,3 +63,12 @@ function saveTodoList() {
 }
 
 renderTodoList();
+
+
+
+// TODO: for to-do items
+// ! is used for important or warning messages
+// ? is used for questions or content that needs confirmation
+// * Used for emphasis or important instructions
+// Other common comments
+
