@@ -42,6 +42,7 @@ function addTodo() {
   saveTodoList();
 
   inputElement.value = '';
+  dateInputElement.value = '';
 
   renderTodoList();
 }
