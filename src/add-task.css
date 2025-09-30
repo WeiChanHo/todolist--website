@@ -1,0 +1,87 @@
+/*AddTaskDialog*/
+.add-task-dialog {
+    position: absolute;
+    height: 350px;
+    width: 500px;
+    top: 15%;
+    left: 35%;
+    border: none;
+    box-shadow: 0px 0px 5px black;
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.add-task-form .add-task-input {
+    height: 35px;   
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #9E9E9E;
+}
+.add-task-form .add-task-input.description {
+    height: 100px;
+    resize: none;
+}
+.add-task-form .add-task-input.date {
+    width: 150px;
+}
+.add-task-form .add-task-input.date:hover {
+    width: 150px;
+    cursor: pointer;
+    background-color: #dfdddd;
+    border: none;
+}
+.add-task-form .date-priority-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.add-task-form .add-task-input.priority, .add-task-form .add-task-input.project {
+    appearance: none;
+    padding: 0;
+    padding-left: 10px;
+    background-color: white;
+}
+.add-task-form .add-task-input.priority {
+    width: 90px;
+}
+.add-task-form .add-task-input.project {
+    width: 150px;
+}
+.add-task-form button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.add-task-form button + button{
+    background-color: #03A9F4;
+    color: white;
+}
+.add-task-form button + button:hover {
+    cursor: pointer;
+    background-color: #036bf4;
+}
+.add-task-form button:nth-child(1):hover{
+    cursor: pointer;
+    background-color: #e0dbdb;
+}
+
+.add-task-form .add-task-input.priority:hover , .add-task-form .add-task-input.project:hover {
+    cursor: pointer;
+    background-color: #dfdddd;
+}
+
+.add-task-form .add-task-input.priority:focus, .add-task-form .add-task-input.project:focus {
+    background-color: white;
+}
+
+.add-task-form .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

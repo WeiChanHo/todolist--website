@@ -51,7 +51,7 @@ const addTask = () => {
         titleInput.setAttribute('required', 'required');
         titleInput.setAttribute("placeholder", "title*");
         descInput.setAttribute('placeholder', 'description');
-        descInput.setAttribute('maxlength', '170');
+        descInput.setAttribute('max_length', '170');
         dateInput.setAttribute('type', 'date');
         addBtn.setAttribute("type", "submit");
         closeBtn.setAttribute("type", "button");

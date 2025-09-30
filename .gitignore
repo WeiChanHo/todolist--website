@@ -1,3 +1,5 @@
+__pycache__
+
 # Logs
 logs
 *.log
@@ -11,6 +13,7 @@ build/
 
 # Environment variables
 .env
+venv/
 
 # IDE files
 .vscode/
